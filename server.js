@@ -10,7 +10,7 @@ export default {
         });
       }
       try {
-        const response = await puter.ai.chat(prompt, { model: 'claude-opus-4-5-20251101' });
+        const response = await puter.ai.chat(prompt, { model: 'claude-opus-3-5' });
         return new Response(JSON.stringify({ response }), {
           headers: { 'Content-Type': 'application/json' }
         });
