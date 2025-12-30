@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <script src="https://js.puter.com/v2/"></script>
+    <style>
+        body { background: #1e1e1e; color: #d4d4d4; font-family: monospace; padding: 20px; }
+        #output { white-space: pre-wrap; }
+        input { width: 100%; padding: 10px; background: #333; color: white; border: none; outline: none; }
+    </style>
+</head>
+<body>
+    <h2>Ahsan's Opus 4.5 Terminal</h2>
+    <div id="output"></div>
+    <input type="text" id="prompt" placeholder="Ask Claude Opus 4.5..." onkeydown="if(event.key==='Enter') ask(this)">
+
+    <script>
+        async function ask(input) {
+            const prompt = input.value;
+            input.value = '';
+            document.getElementById('output').innerHTML += `\n> ${prompt}\n`;
+            
+            // The Magic Line: accessing Opus 4.5 for free
+            const response = await puter.ai.chat(prompt, { 
+                model: 'claude-opus-4-5',
+                stream: true 
+            });
+
+            for await (const part of response) {
+                document.getElementById('output').innerHTML += part?.text || '';
+            }
+            document.getElementById('output').innerHTML += '\n';
+        }
+    </script>
+</body>
+</html> -->
+
+
+<html>
+<body>
+    <script src="https://js.puter.com/v2/"></script>
+    <script>
+        // Chat with GPT-5 nano
+        puter.ai.chat(`What is life?`, { model: "gpt-5-nano" }).then(puter.print);
+    </script>
+</body>
+</html>
