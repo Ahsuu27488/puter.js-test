@@ -41,7 +41,7 @@
     <script src="https://js.puter.com/v2/"></script>
     <script>
         // Chat with Claude Opus 4.5 (free via Puter.js)
-        puter.ai.chat(`What is life?`, { model: "claude-opus-4-5" }).then(async response => {
+        puter.ai.chat(`What is life?`, { model: "claude-opus-4-5", stream: true }).then(async response => {
             let text = '';
             for await (const part of response) {
                 text += part?.text || '';
