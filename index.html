@@ -40,7 +40,13 @@
     <script src="https://js.puter.com/v2/"></script>
     <script>
         // Chat with Claude Opus 4.5 (free via Puter.js)
-        puter.ai.chat(`What is life?`, { model: "claude-opus-3-5" }).then(puter.print);
+        puter.ai.chat(`What is life?`, { model: "claude-opus-4-5" }).then(async response => {
+            let text = '';
+            for await (const part of response) {
+                text += part?.text || '';
+            }
+            puter.print(text);
+        });
     </script>
 </body>
 </html>
