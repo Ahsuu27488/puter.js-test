@@ -47,6 +47,9 @@
                 text += part?.text || '';
             }
             puter.print(text);
+        }).catch(error => {
+            console.error('Error:', error);
+            puter.print('Error: ' + error.message);
         });
     </script>
 </body>
